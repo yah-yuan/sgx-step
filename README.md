@@ -123,16 +123,19 @@ timer interval (`libsgxstep/config.h`).
 
 To enable easy registration of a custom Asynchronous Exit Pointer (AEP) stub,
 we modified the untrusted runtime of the official Intel SGX SDK. Proceed as
-follows to checkout [linux-sgx](https://github.com/01org/linux-sgx) v2.2 and
+follows to checkout [linux-sgx](https://github.com/01org/linux-sgx) v2.4 and
 apply our patches.
 
 ```bash
 $ git submodule init
 $ git submodule update
+$ ./install_SGX_driver.sh # tested on Ubuntu 16.04
 $ ./patch_sdk.sh
+$ ./install_SGX_SDK.sh    # tested on Ubuntu 16.04
 ```
 
-Now, follow the instructions in the
+The above install scripts are tested on Ubuntu 16.04 LTS.
+For other GNU/Linux distributions, please follow the instructions in the
 [linux-sgx](https://github.com/01org/linux-sgx) project to build and install
 the Intel SGX SDK and PSW packages. You will also need to build and load an
 (unmodified) [linux-sgx-driver](https://github.com/01org/linux-sgx-driver) SGX
